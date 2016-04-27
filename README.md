@@ -10,27 +10,27 @@ recurse 7 1 50 is what creates the pattern below  7 for 7 iterations, 1 for star
 
 Function recurse is below -- it calls my tree drawing function
 
-function recurse {
-        let iter=$1
-        let row_num=$2
-        let col_num=$3
-        tree $row_num $col_num
-}
+function recurse {  
+        let iter=$1  
+        let row_num=$2  
+        let col_num=$3  
+        tree $row_num $col_num  
+}  
 
 Then my tree drawing function calls recurse when it is finished drawing, subtracting an iteration.  I have  
 to call it 2 times for the left and right trees.
 
-  while [ $iter -gt 1 ]
-        do
-        let iter--
-        recurse $iter $row_num $mod_col_neg
-        done
+  while [ $iter -gt 1 ]  
+        do  
+        let iter--  
+        recurse $iter $row_num $mod_col_neg  
+        done  
 
- while [ $iter2 -gt 1 ]
-        do
-        let iter2--
-        recurse $iter2 $row_num $mod_col_pos
-        done
+ while [ $iter2 -gt 1 ]  
+        do  
+        let iter2--  
+        recurse $iter2 $row_num $mod_col_pos  
+        done  
 
 
 
